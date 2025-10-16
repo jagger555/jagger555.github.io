@@ -178,6 +178,16 @@ template {
 [hidden] {
   display: none
 }
+/*移动端优化：去除归档、标签、最新文章、公告、、只保留网站统计*/
+@media screen and (max-width: 800px) {
+  #aside_content
+  div:not(:last-child) {
+    display: none;
+    font-size: 13px;
+  }
+}
+
+
 .limit-one-line,
 .container .flink .flink-item-name,
 .container .flink .flink-item-desc,
@@ -4254,7 +4264,16 @@ figure.highlight pre .javascript .function {
   width: 100%;
 }
 #page-header #site-title,
-#page-header #site-subtitle,
+#page-header #site-subtitle {
+  color: var(--black);
+  font-size: 1.05em;
+}
+@media screen and (min-width: 768px) {
+  #page-header #site-title,
+  #page-header #site-subtitle {
+    font-size: 1.4em;
+  }
+}
 #page-header #scroll-down .scroll-down-effects {
   text-align: center;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
